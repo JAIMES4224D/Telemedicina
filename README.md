@@ -78,89 +78,181 @@ graph TB
     style C fill:#F39C12,color:white
     style D fill:#9B59B6,color:white
 ```
+
 </div>
-🚀 CARACTERÍSTICAS PRINCIPALES
+---
+## 🚀 **CARACTERÍSTICAS PRINCIPALES**
+
 <div align="center">
-🎯 Módulos Especializados por Rol
-</div><div align="center"><table> <tr> <td width="33%" valign="top">
-🌟 MÓDULO PACIENTE
-<div align="center"> 🫀 **Gestión Personal de Salud** </div>
-📅 Agendamiento Inteligente
 
-Sistema de citas 24/7
+### **🎯 Módulos Especializados por Rol**
 
-Recordatorios automáticos
+</div>
 
-Cancelación flexible
+<div align="center">
 
-🏥 Historial Médico Digital
+<table>
+<tr>
+<td width="33%" valign="top" style="border-radius: 15px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
 
-Acceso completo a historial
+### 🌟 **MÓDULO PACIENTE**
+<div align="center" style="margin-bottom: 15px;">
+🫀 **Gestión Personal de Salud**
+</div>
 
-Resultados de exámenes
+- 📅 **Agendamiento Inteligente**
+  - ⚡ Sistema de citas 24/7
+  - 🔔 Recordatorios automáticos
+  - 🔄 Cancelación flexible
 
-Medicamentos recetados
+- 🏥 **Historial Médico Digital**
+  - 📋 Acceso completo a historial
+  - 🧪 Resultados de exámenes
+  - 💊 Medicamentos recetados
 
-🔔 Comunicación Directa
+- 🔔 **Comunicación Directa**
+  - 💬 Mensajería con médicos
+  - 🚨 Alertas importantes
+  - 📱 Notificaciones push
 
-Mensajería con médicos
+</td>
 
-Alertas importantes
+<td width="33%" valign="top" style="border-radius: 15px; padding: 20px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
 
-Notificaciones push
+### 💼 **MÓDULO MÉDICO**
+<div align="center" style="margin-bottom: 15px;">
+🩺 **Herramientas Profesionales**
+</div>
 
-</td> <td width="33%" valign="top">
-💼 MÓDULO MÉDICO
-<div align="center"> 🩺 **Herramientas Profesionales** </div>
-🗓️ Gestión de Agenda
+- 🗓️ **Gestión de Agenda**
+  - 📊 Vista calendario integrada
+  - ⏰ Control de disponibilidad
+  - 🎯 Optimización de tiempo
 
-Vista calendario integrada
+- 📊 **Dashboard Clínico**
+  - 📈 Métricas de pacientes
+  - 🩺 Indicadores de salud
+  - 📋 Reportes automáticos
 
-Control de disponibilidad
+- 💡 **Herramientas Diagnósticas**
+  - 📝 Prescripción digital
+  - 🗒️ Notas médicas
+  - 🔍 Seguimiento tratamiento
 
-Optimización de tiempo
+</td>
 
-📊 Dashboard Clínico
+<td width="33%" valign="top" style="border-radius: 15px; padding: 20px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
 
-Métricas de pacientes
+### 👑 **MÓDULO ADMINISTRADOR**
+<div align="center" style="margin-bottom: 15px;">
+⚙️ **Control Total del Sistema**
+</div>
 
-Indicadores de salud
+- 📈 **Analítica Avanzada**
+  - 📊 Reportes del sistema
+  - 📱 Métricas de uso
+  - 🎯 KPIs de rendimiento
 
-Reportes automáticos
+- 👥 **Gestión de Usuarios**
+  - 👤 Altas y bajas
+  - 🔐 Permisos y roles
+  - 📋 Auditoría completa
 
-💡 Herramientas Diagnósticas
+- 🔧 **Configuración**
+  - ⚙️ Parámetros del sistema
+  - 💾 Backup automático
+  - 🛡️ Seguridad y acceso
 
-Prescripción digital
+</td>
+</tr>
+</table>
 
-Notas médicas
+</div>
 
-Seguimiento tratamiento
+---
 
-</td> <td width="33%" valign="top">
-👑 MÓDULO ADMINISTRADOR
-<div align="center"> ⚙️ **Control Total del Sistema** </div>
-📈 Analítica Avanzada
+## 🛠 **TECNOLOGÍAS IMPLEMENTADAS**
 
-Reportes del sistema
+<div align="center">
 
-Métricas de uso
+<table>
+<tr>
+<td align="center" width="25%" style="border-radius: 10px; padding: 15px; background: #f8f9fa; border: 2px solid #4A90E2;">
 
-KPIs de rendimiento
+### **🖥️ Frontend**
+![Java Swing](https://img.shields.io/badge/Java_Swing-4A90E2?style=for-the-badge&logo=java&logoColor=white)
+![NetBeans IDE](https://img.shields.io/badge/NetBeans_8.2-1B6AC6?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
 
-👥 Gestión de Usuarios
+**✨ Interfaz desktop moderna y responsive**
 
-Altas y bajas
+</td>
 
-Permisos y roles
+<td align="center" width="25%" style="border-radius: 10px; padding: 15px; background: #f8f9fa; border: 2px solid #ED8B00;">
 
-Auditoría completa
+### **⚙️ Backend**
+![Java SE](https://img.shields.io/badge/Java_SE-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![MVC Pattern](https://img.shields.io/badge/MVC_Architecture-0088CC?style=for-the-badge&logo=java&logoColor=white)
 
-🔧 Configuración
+**🚀 Arquitectura robusta y escalable**
 
-Parámetros del sistema
+</td>
 
-Backup automático
+<td align="center" width="25%" style="border-radius: 10px; padding: 15px; background: #f8f9fa; border: 2px solid #005C84;">
 
-Seguridad y acceso
+### **🗄️ Base de Datos**
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![JDBC](https://img.shields.io/badge/JDBC_Connector-FF6B6B?style=for-the-badge&logo=java&logoColor=white)
 
-</td> </tr> </table></div>
+**💾 Almacenamiento seguro y eficiente**
+
+</td>
+
+<td align="center" width="25%" style="border-radius: 10px; padding: 15px; background: #f8f9fa; border: 2px solid #9B59B6;">
+
+### **🚀 Características**
+![MultiRol](https://img.shields.io/badge/Multi_Rol_System-9B59B6?style=for-the-badge&logo=users&logoColor=white)
+![RealTime](https://img.shields.io/badge/Real_Time_Updates-27AE60?style=for-the-badge&logo=clock&logoColor=white)
+
+**🎯 Sistema integral y en tiempo real**
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+## 📊 **FLUJO DE TRABAJO**
+
+<div align="center">
+
+```mermaid
+sequenceDiagram
+    participant P as 👤 Paciente
+    participant S as 🖥️ Sistema
+    participant D as 👨‍⚕️ Médico
+    participant A as 👑 Admin
+
+    Note over P,A: Inicio de Sesión
+    P->>S: 📝 Registro/Login
+    S->>P: 🎛️ Dashboard Personalizado
+    
+    Note over P,D: Proceso de Cita
+    P->>S: 📅 Solicitar Cita
+    S->>D: 🔔 Notificación Nueva Cita
+    D->>S: ✅ Confirmar Cita
+    S->>P: 📩 Confirmación y Recordatorio
+    
+    Note over P,D: Consulta Virtual
+    P->>D: 💬 Consulta Virtual
+    D->>S: 📋 Registrar Diagnóstico
+    S->>P: 📊 Historial Actualizado
+    
+    Note over A,S: Administración
+    A->>S: 📈 Generar Reportes
+    S->>A: 📊 Métricas y Analytics
+    
+    Note over S: 🏆 Sistema 100% Integrado<br/>⏰ y en Tiempo Real
+```
+</div>
