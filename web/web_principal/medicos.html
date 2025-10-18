@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Médicos - Policlínico Wiener Sistem</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <style>
+            :root{
+                --primary: #1a7cc9;
+                --secondary: #2c3e50;
+                --accent: #2ecc71;
+                --light: #f8f9fa;
+                --dark: #343a40;
+                --danger: #e74c3c;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: 'Open Sans', sans-serif;
+                color: #333;
+                line-height: 1.6;
+                background-color: #f0f7fd;
+            }
+            h1, h2, h3, h4, h5, h6{
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                color: var(--secondary);
+            }
+            
+            /* Navbar Styles */
+            nav {
+              background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+              box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+              padding: 0.8rem 1rem;
+              position: sticky;
+              top: 0;
+              z-index: 1000;
+            }
+
+            .navbar-container {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+
+            .navbar-brand {
+              display: flex;
+              align-items: center;
+              color: white !important;
+              text-decoration: none;
+              font-size: 1.5rem;
+              font-weight: 700;
+            }
+
+            .navbar-brand i {
+              font-size: 1.8rem;
+              margin-right: 0.5rem;
+              color: #fff;
+            }
+
+            .navbar-toggler {
+              display: none;
+              background: none;
+              border: none;
+              color: white;
+              font-size: 1.5rem;
+              cursor: pointer;
+            }
+
+            .navbar-menu {
+              display: flex;
+            }
+
+            .navbar-nav {
+              display: flex;
+              list-style: none;
+              align-items: center;
+            }
+
+            .nav-item {
+              margin: 0 0.5rem;
+            }
+
+            .nav-link {
+              color: rgba(255, 255, 255, 0.85);
+              text-decoration: none;
+              padding: 0.5rem 0.8rem;
+              border-radius: 4px;
+              transition: all 0.3s;
+              font-weight: 500;
+            }
+
+            .nav-link:hover, .nav-link.active {
+              color: white;
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .btn-login {
+              background-color: var(--accent);
+              color: white !important;
+              padding: 0.5rem 1.2rem;
+              border-radius: 30px;
+              font-weight: 600;
+            }
+
+            .btn-login:hover {
+              background-color: #27ae60;
+              transform: translateY(-2px);
+            }
+            
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(rgba(26, 124, 201, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1480&q=80');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                padding: 7rem 1rem;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+                color: white;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+            }
+            
+            /* Doctors Section */
+            .doctors-section {
+                padding: 5rem 1rem;
+                background-color: white;
+            }
+            
+            .section-title {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-title h2:after {
+                content: '';
+                position: absolute;
+                width: 60px;
+                height: 3px;
+                background-color: var(--primary);
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .specialty-filter {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 3rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1.5rem;
+                border: 2px solid var(--primary);
+                background: white;
+                color: var(--primary);
+                border-radius: 30px;
+                cursor: pointer;
+                transition: all 0.3s;
+                font-weight: 600;
+            }
+            
+            .filter-btn:hover, .filter-btn.active {
+                background: var(--primary);
+                color: white;
+            }
+            
+            .doctors-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .doctor-card {
+                background-color: var(--light);
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+            }
+            
+            .doctor-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .doctor-img {
+                height: 300px;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+            
+            .doctor-specialty {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: var(--primary);
+                color: white;
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+            
+            .doctor-content {
+                padding: 1.5rem;
+            }
+            
+            .doctor-name {
+                font-size: 1.4rem;
+                margin-bottom: 0.5rem;
+                color: var(--primary);
+            }
+            
+            .doctor-info {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                color: #666;
+                font-size: 0.9rem;
+            }
+            
+            .doctor-info i {
+                margin-right: 0.5rem;
+                color: var(--accent);
+            }
+            
+            .doctor-description {
+                margin: 1rem 0;
+                color: #555;
+            }
+            
+            .doctor-skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin: 1rem 0;
+            }
+            
+            .skill-tag {
+                background: rgba(46, 204, 113, 0.1);
+                color: var(--accent);
+                padding: 0.3rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.8rem;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s;
+                display: inline-block;
+                margin-top: 1rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            .btn-primary {
+                background-color: var(--accent);
+                color: white;
+            }
+
+            .btn-primary:hover {
+                background-color: #27ae60;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            /* Stats Section */
+            .stats {
+                padding: 4rem 1rem;
+                background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+                color: white;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .stat-item {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* CTA Section */
+            .cta {
+                padding: 5rem 1rem;
+                background: linear-gradient(135deg, #e6f0ff, #f9fbff);
+                text-align: center;
+            }
+            
+            .cta-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            /* Footer */
+            footer {
+                background-color: var(--secondary);
+                color: white;
+                padding: 3rem 1rem;
+            }
+
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+
+            .footer-logo {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .footer-links h5 {
+                color: white;
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .footer-links ul {
+                list-style: none;
+            }
+
+            .footer-links li {
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: white;
+            }
+
+            .footer-contact li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            .footer-contact i {
+                margin-right: 0.5rem;
+                color: var(--accent);
+            }
+
+            .footer-bottom {
+                text-align: center;
+                margin-top: 3rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .navbar-toggler {
+                    display: block;
+                }
+
+                .navbar-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    background-color: var(--secondary);
+                    flex-direction: column;
+                    padding: 1rem;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                }
+
+                .navbar-menu.active {
+                    display: flex;
+                }
+
+                .navbar-nav {
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                .nav-item {
+                    width: 100%;
+                    margin: 0.3rem 0;
+                }
+
+                .nav-link {
+                    display: block;
+                    padding: 0.8rem;
+                }
+
+                .hero {
+                    padding: 5rem 1rem;
+                }
+
+                .hero h1 {
+                    font-size: 2.2rem;
+                }
+                
+                .specialty-filter {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .filter-btn {
+                    width: 200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="navbar-container">
+              <a class="navbar-brand" href="index.html">
+                <i class="bi bi-heart-pulse"></i> TELEMEDICINA
+              </a>
+              <button class="navbar-toggler"><i class="bi bi-list"></i></button>
+              <div class="navbar-menu">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                  <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                  <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="medicos.html">Médicos</a></li>
+                  <li class="nav-item"><a class="nav-link" href="registro.jsp">Registro</a></li>
+                  <li class="nav-item"><a class="nav-link" href="contacto.jsp">Contacto</a></li>
+                  <li class="nav-item"><a class="nav-link btn-login" href="../logeo/iniciarSesion.jsp">Iniciar Sesión</a></li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Nuestro Equipo Médico</h1>
+                <p>Profesionales de la salud altamente calificados y comprometidos con tu bienestar.</p>
+            </div>
+        </section>
+        
+        <!-- Doctors Section -->
+        <section class="doctors-section">
+            <div class="section-title">
+                <h2>Especialistas en Salud</h2>
+                <p>Contamos con un equipo multidisciplinario de profesionales de la salud</p>
+            </div>
+            
+            <div class="specialty-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="cardiologia">Cardiología</button>
+                <button class="filter-btn" data-filter="pediatria">Pediatría</button>
+                <button class="filter-btn" data-filter="ginecologia">Ginecología</button>
+                <button class="filter-btn" data-filter="traumatologia">Traumatología</button>
+                <button class="filter-btn" data-filter="dermatologia">Dermatología</button>
+            </div>
+            
+            <div class="doctors-grid">
+                <!-- Cardiólogo -->
+                <div class="doctor-card" data-category="cardiologia">
+                    <div class="doctor-img" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80')">
+                        <div class="doctor-specialty">Cardiología</div>
+                    </div>
+                    <div class="doctor-content">
+                        <h3 class="doctor-name">Dr. Carlos Mendoza</h3>
+                        <div class="doctor-info">
+                            <i class="bi bi-award"></i>
+                            <span>Cardiólogo - 15 años de experiencia</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Clínica Delgado</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-clock"></i>
+                            <span>Lun - Vie: 8:00 am - 6:00 pm</span>
+                        </div>
+                        <p class="doctor-description">
+                            Especialista en enfermedades cardiovasculares y rehabilitación cardíaca. 
+                            Miembro de la Sociedad Peruana de Cardiología.
+                        </p>
+                        <div class="doctor-skills">
+                            <span class="skill-tag">Ecocardiograma</span>
+                            <span class="skill-tag">Holter</span>
+                            <span class="skill-tag">Prueba de Esfuerzo</span>
+                        </div>
+                        <a href="../logeo/iniciarSesion.jsp" class="btn btn-primary">Solicitar cita</a>
+                    </div>
+                </div>
+                
+                <!-- Pediatra -->
+                <div class="doctor-card" data-category="pediatria">
+                    <div class="doctor-img" style="background-image: url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=600&q=80')">
+                        <div class="doctor-specialty">Pediatría</div>
+                    </div>
+                    <div class="doctor-content">
+                        <h3 class="doctor-name">Dra. Ana Fernández</h3>
+                        <div class="doctor-info">
+                            <i class="bi bi-award"></i>
+                            <span>Pediatra - 12 años de experiencia</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Clínica Internacional</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-clock"></i>
+                            <span>Lun - Sáb: 9:00 am - 5:00 pm</span>
+                        </div>
+                        <p class="doctor-description">
+                            Especialista en cuidado infantil y medicina adolescente. 
+                            Amplia experiencia en vacunación y desarrollo infantil.
+                        </p>
+                        <div class="doctor-skills">
+                            <span class="skill-tag">Vacunación</span>
+                            <span class="skill-tag">Desarrollo Infantil</span>
+                            <span class="skill-tag">Nutrición</span>
+                        </div>
+                        <a href="../logeo/iniciarSesion.jsp" class="btn btn-primary">Solicitar cita</a>
+                    </div>
+                </div>
+                
+                <!-- Ginecóloga -->
+                <div class="doctor-card" data-category="ginecologia">
+                    <div class="doctor-img" style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80')">
+                        <div class="doctor-specialty">Ginecología</div>
+                    </div>
+                    <div class="doctor-content">
+                        <h3 class="doctor-name">Dra. Laura Torres</h3>
+                        <div class="doctor-info">
+                            <i class="bi bi-award"></i>
+                            <span>Ginecóloga - 18 años de experiencia</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Clínica Anglo Americana</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-clock"></i>
+                            <span>Lun - Vie: 8:30 am - 7:00 pm</span>
+                        </div>
+                        <p class="doctor-description">
+                            Especialista en salud femenina, obstetricia y reproducción. 
+                            Certificada en ecografía ginecológica y mamaria.
+                        </p>
+                        <div class="doctor-skills">
+                            <span class="skill-tag">Ecografía</span>
+                            <span class="skill-tag">Control Prenatal</span>
+                            <span class="skill-tag">Menopausia</span>
+                        </div>
+                        <a href="../logeo/iniciarSesion.jsp" class="btn btn-primary">Solicitar cita</a>
+                    </div>
+                </div>
+                
+                <!-- Traumatólogo -->
+                <div class="doctor-card" data-category="traumatologia">
+                    <div class="doctor-img" style="background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80')">
+                        <div class="doctor-specialty">Traumatología</div>
+                    </div>
+                    <div class="doctor-content">
+                        <h3 class="doctor-name">Dr. Miguel Ángel Rojas</h3>
+                        <div class="doctor-info">
+                            <i class="bi bi-award"></i>
+                            <span>Traumatólogo - 20 años de experiencia</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Clínica San Felipe</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-clock"></i>
+                            <span>Lun - Vie: 8:00 am - 8:00 pm</span>
+                        </div>
+                        <p class="doctor-description">
+                            Especialista en cirugía ortopédica y traumatología. 
+                            Experto en reemplazos articulares y artroscopia.
+                        </p>
+                        <div class="doctor-skills">
+                            <span class="skill-tag">Artroscopia</span>
+                            <span class="skill-tag">Cirugía Articular</span>
+                            <span class="skill-tag">Rehabilitación</span>
+                        </div>
+                        <a href="../logeo/iniciarSesion.jsp" class="btn btn-primary">Solicitar cita</a>
+                    </div>
+                </div>
+                
+                <!-- Dermatóloga -->
+                <div class="doctor-card" data-category="dermatologia">
+                    <div class="doctor-img" style="background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80')">
+                        <div class="doctor-specialty">Dermatología</div>
+                    </div>
+                    <div class="doctor-content">
+                        <h3 class="doctor-name">Dra. Sofía López</h3>
+                        <div class="doctor-info">
+                            <i class="bi bi-award"></i>
+                            <span>Dermatóloga - 10 años de experiencia</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Clínica Ricardo Palma</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-clock"></i>
+                            <span>Mar - Sáb: 10:00 am - 6:00 pm</span>
+                        </div>
+                        <p class="doctor-description">
+                            Especialista en dermatología clínica, cosmética y cirugía dermatológica. 
+                            Experta en tratamientos con láser.
+                        </p>
+                        <div class="doctor-skills">
+                            <span class="skill-tag">Láser</span>
+                            <span class="skill-tag">Dermatoscopía</span>
+                            <span class="skill-tag">Estética</span>
+                        </div>
+                        <a href="../logeo/iniciarSesion.jsp" class="btn btn-primary">Solicitar cita</a>
+                    </div>
+                </div>
+                
+                <!-- Médico General -->
+                <div class="doctor-card" data-category="medicina-general">
+                    <div class="doctor-img" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80')">
+                        <div class="doctor-specialty">Medicina General</div>
+                    </div>
+                    <div class="doctor-content">
+                        <h3 class="doctor-name">Dr. Javier Ramírez</h3>
+                        <div class="doctor-info">
+                            <i class="bi bi-award"></i>
+                            <span>Médico General - 8 años de experiencia</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Policlínico Wiener Sistem</span>
+                        </div>
+                        <div class="doctor-info">
+                            <i class="bi bi-clock"></i>
+                            <span>Lun - Dom: 8:00 am - 10:00 pm</span>
+                        </div>
+                        <p class="doctor-description">
+                            Médico general con amplia experiencia en atención primaria, 
+                            diagnóstico y manejo de enfermedades comunes.
+                        </p>
+                        <div class="doctor-skills">
+                            <span class="skill-tag">Diagnóstico</span>
+                            <span class="skill-tag">Prevención</span>
+                            <span class="skill-tag">Atención Integral</span>
+                        </div>
+                        <a href="../logeo/iniciarSesion.jsp" class="btn btn-primary">Solicitar cita</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Especialistas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Especialidades</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Pacientes Atendidos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfacción del Paciente</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2>¿No encuentras al especialista que necesitas?</h2>
+                <p>Contáctanos y te ayudaremos a encontrar el médico perfecto para tus necesidades de salud.</p>
+                <a href="contacto.jsp" class="btn btn-primary">Contactar ahora</a>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo"><i class="bi bi-heart-pulse"></i> POLICLÍNICO WIENER SISTEM</div>
+                    <p>Comprometidos con tu salud y bienestar, ofreciendo servicios médicos de calidad con calidez humana.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Servicios</h5>
+                    <ul>
+                        <li><a href="servicios.html">Consultas</a></li>
+                        <li><a href="servicios.html">Exámenes</a></li>
+                        <li><a href="servicios.html">Urgencias</a></li>
+                        <li><a href="servicios.html">Vacunas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Información</h5>
+                    <ul>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="medicos.html">Médicos</a></li>
+                        <li><a href="servicios.html">Precios</a></li>
+                        <li><a href="https://www.facebook.com/jeferson.jaimes.2025">Facebook</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><i class="bi bi-geo-alt"></i> Av. Los Pinos 711, Independencia</li>
+                        <li><i class="bi bi-telephone"></i> (01) 234-5678</li>
+                        <li><i class="bi bi-envelope"></i> info@policlinico.com</li>
+                        <li><i class="bi bi-clock"></i> Lun-Vie: 8am - 8pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Policlínico Wiener Sistem. Todos los derechos reservados.</p>
+                <p><a href="../legal/terminos.jsp">Términos y condiciones</a> | <a href="../legal/privacidad.jsp">Política de privacidad</a></p>
+            </div>
+        </footer>
+        
+        <script>
+            // Toggle menu for mobile
+            document.querySelector('.navbar-toggler').addEventListener('click', function() {
+                const navbarMenu = document.querySelector('.navbar-menu');
+                navbarMenu.classList.toggle('active');
+                
+                // Cambiar ícono
+                const icon = this.querySelector('i');
+                if (navbarMenu.classList.contains('active')) {
+                    icon.classList.remove('bi-list');
+                    icon.classList.add('bi-x-lg');
+                } else {
+                    icon.classList.remove('bi-x-lg');
+                    icon.classList.add('bi-list');
+                }
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const navbarMenu = document.querySelector('.navbar-menu');
+                    navbarMenu.classList.remove('active');
+                    const icon = document.querySelector('.navbar-toggler i');
+                    icon.classList.remove('bi-x-lg');
+                    icon.classList.add('bi-list');
+                });
+            });
+            
+            // Filtro de especialidades
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Quitar clase active de todos los botones
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    const doctorCards = document.querySelectorAll('.doctor-card');
+                    
+                    doctorCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-category') === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

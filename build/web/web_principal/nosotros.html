@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Policlínico Wiener Sistem</title>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a7cc9;
+      --secondary: #2c3e50;
+      --accent: #2ecc71;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --danger: #e74c3c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f0f7fd;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    /* Navbar Styles - COPIADO EXACTO DEL INDEX */
+    nav {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 0.8rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: white !important;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .navbar-brand i {
+      font-size: 1.8rem;
+      margin-right: 0.5rem;
+      color: #fff;
+    }
+
+    .navbar-toggler {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .navbar-menu {
+      display: flex;
+    }
+
+    .navbar-nav {
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-item {
+      margin: 0 0.5rem;
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-login {
+      background-color: var(--accent);
+      color: white !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .btn-login:hover {
+      background-color: #27ae60;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(26, 124, 201, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1584516150909-c43483ee7930?auto=format&fit=crop&w=1480&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 7rem 1rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 5rem 1rem;
+      background: url('https://images.unsplash.com/photo-1581092921461-7e0cdfbb6793?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+      color: white;
+      position: relative;
+    }
+
+    .features::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(26, 124, 201, 0.9) 0%, rgba(44, 62, 80, 0.9) 100%);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      color: white;
+    }
+
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-title p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 5rem 1rem;
+      background: #f5f9ff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-content {
+      padding: 1.5rem;
+    }
+
+    .service-content h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* Values Section */
+    .values {
+      padding: 5rem 1rem;
+      background: white;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+      background: var(--light);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+    }
+
+    .value-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 5rem 1rem;
+      background: linear-gradient(135deg, #e6f0ff, #f9fbff);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--primary);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .testimonial-card h4 {
+      color: var(--primary);
+    }
+
+    /* CTA Section */
+    .cta {
+      padding: 5rem 1rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #27ae60;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background-color: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* Títulos en azul para mejor contraste */
+    .services .section-title h2,
+    .values .section-title h2,
+    .testimonials .section-title h2 {
+      color: var(--primary) !important;
+    }
+
+    .services .section-title p,
+    .values .section-title p,
+    .testimonials .section-title p {
+      color: #555 !important;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      padding: 3rem 1rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .footer-links h5 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-contact li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact i {
+      margin-right: 0.5rem;
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar-toggler {
+        display: block;
+      }
+
+      .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-menu.active {
+        display: flex;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-item {
+        width: 100%;
+        margin: 0.3rem 0;
+      }
+
+      .nav-link {
+        display: block;
+        padding: 0.8rem;
+      }
+
+      .hero {
+        padding: 5rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar-container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-heart-pulse"></i> TELEMEDICINA
+      </a>
+      <button class="navbar-toggler"><i class="bi bi-list"></i></button>
+      <div class="navbar-menu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="medicos.html">Médicos</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.jsp">Registro</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.jsp">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link btn-login" href="../logeo/iniciarSesion.jsp">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sobre Nosotros</h1>
+      <p>Más de 15 años cuidando la salud de las familias con dedicación y compromiso.</p>
+    </div>
+  </section>
+
+  <!-- CONÓCENOS MEJOR -->
+  <section class="features">
+    <div class="section-title">
+      <h2>Conócenos Mejor</h2>
+      <p>Policlínico Wiener Sistem, tu salud en buenas manos</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="bi bi-building feature-icon"></i>
+        <h3>Nuestra Historia</h3>
+        <p>Fundado en 2010, el Policlínico Wiener Sistem nació con la visión de revolucionar el sector salud en Perú. A lo largo de más de una década, hemos crecido hasta convertirnos en un referente de calidad y confianza, siempre manteniendo nuestro compromiso con el bienestar de nuestros pacientes.</p>
+      </div>
+      <div class="feature-card">
+        <i class="bi bi-bullseye feature-icon"></i>
+        <h3>Misión</h3>
+        <p>Brindar atención médica integral de alta calidad, accesible y humana, utilizando tecnología de vanguardia para mejorar la salud y el bienestar de nuestros pacientes, con un equipo médico comprometido con la excelencia y el trato personalizado.</p>
+      </div>
+      <div class="feature-card">
+        <i class="bi bi-eye feature-icon"></i>
+        <h3>Visión</h3>
+        <p>Ser reconocidos como el centro médico líder en innovación y calidad de servicio a nivel nacional, destacándonos por nuestra capacidad para integrar los avances tecnológicos con el calor humano en la atención al paciente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRAESTRUCTURA Y TECNOLOGÍA -->
+  <section class="services">
+    <div class="section-title">
+      <h2>Infraestructura y Tecnología</h2>
+      <p>Modernas instalaciones para garantizar tu bienestar</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="service-content">
+          <h3>Consultorios Modernos</h3>
+          <p>Ambientes amplios, cómodos y adaptados para brindar una atención cálida. Diseñados pensando en la comodidad del paciente y la eficiencia del personal médico.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1581092334710-42e7c8d43d3c?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="service-content">
+          <h3>Tecnología Avanzada</h3>
+          <p>Contamos con equipos médicos de última generación para diagnósticos precisos y seguros, incluyendo sistemas de imagenología digital y laboratorio automatizado.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1580281657521-6cc8c2aa6c65?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="service-content">
+          <h3>Área de Emergencias</h3>
+          <p>Nuestra unidad de emergencias cuenta con personal especializado y equipamiento de última tecnología listo para atender cualquier urgencia las 24 horas del día.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="values">
+    <div class="section-title">
+      <h2>Nuestros Valores</h2>
+      <p>Principios que guían nuestro trabajo diario</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-item">
+        <i class="bi bi-heart value-icon"></i>
+        <h3>Compasión</h3>
+        <p>Ponemos el bienestar del paciente en el centro de todo lo que hacemos.</p>
+      </div>
+      <div class="value-item">
+        <i class="bi bi-shield-check value-icon"></i>
+        <h3>Integridad</h3>
+        <p>Actuamos con honestidad y transparencia en todas nuestras acciones.</p>
+      </div>
+      <div class="value-item">
+        <i class="bi bi-lightbulb value-icon"></i>
+        <h3>Innovación</h3>
+        <p>Buscamos constantemente mejorar mediante la adopción de tecnologías avanzadas.</p>
+      </div>
+      <div class="value-item">
+        <i class="bi bi-people value-icon"></i>
+        <h3>Trabajo en Equipo</h3>
+        <p>Colaboramos para ofrecer la mejor atención multidisciplinaria.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonials">
+    <div class="section-title">
+      <h2>Lo que Dicen Nuestros Pacientes</h2>
+      <p>Experiencias que nos motivan a seguir cuidando con dedicación</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Paciente 1" class="testimonial-img">
+        <p>"El trato fue excelente, me sentí escuchada y atendida con mucha paciencia. Los médicos tomaron el tiempo necesario para explicarme todo detalladamente."</p>
+        <h4>- María López</h4>
+        <small>Paciente de Cardiología</small>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Paciente 2" class="testimonial-img">
+        <p>"Gracias a sus médicos y exámenes oportunos, pude detectar a tiempo un problema de salud. El proceso fue rápido y el personal muy empático en todo momento."</p>
+        <h4>- Carlos Ramírez</h4>
+        <small>Paciente de Chequeo General</small>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Paciente 3" class="testimonial-img">
+        <p>"Excelente infraestructura y tecnología, todo muy moderno y seguro. La atención fue rápida y eficiente, con resultados de exámenes disponibles en pocas horas."</p>
+        <h4>- Ana Torres</h4>
+        <small>Paciente de Pediatría</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>¿Necesitas atención médica de calidad?</h2>
+      <p>Agenda una cita con nuestros especialistas y experimenta la diferencia de una atención médica centrada en ti.</p>
+      <div class="cta-buttons">
+        <a href="contacto.jsp" class="btn btn-primary">Solicitar Cita</a>
+        <a href="servicios.html" class="btn btn-outline">Conocer Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-about">
+        <div class="footer-logo"><i class="bi bi-heart-pulse"></i> POLICLÍNICO WIENER SISTEM</div>
+        <p>Comprometidos con tu salud y bienestar, offreciendo servicios médicos de calidad con calidez humana.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Servicios</h5>
+        <ul>
+            <li><a href="../logeo/iniciarSesion.jsp">Consultas</a></li>
+            <li><a href="servicios.html">Exámenes</a></li>
+            <li><a href="contacto.jsp">Urgencias</a></li>
+            <li><a href="contacto.jsp">Vacunas</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Información</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="medicos.html">Médicos</a></li>
+          <li><a href="servicios.html">Precios</a></li>
+          <li><a href="https://www.facebook.com/jeferson.jaimes.2025">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h5>Contacto</h5>
+        <ul>
+          <li><i class="bi bi-geo-alt"></i> Av. Los Pinos 711, Independencia</li>
+          <li><i class="bi bi-telephone"></i> (01) 234-5678</li>
+          <li><i class="bi bi-envelope"></i> info@policlinico.com</li>
+          <li><i class="bi bi-clock"></i> Lun-Vie: 8am - 8pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Policlínico Wiener Sistem. Todos los derechos reservados.</p>
+      <p><a href="../legal/terminos.jsp">Términos y condiciones</a> | <a href="../legal/privacidad.jsp">Política de privacidad</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu for mobile (igual que en el index)
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+      const navbarMenu = document.querySelector('.navbar-menu');
+      navbarMenu.classList.toggle('active');
+      
+      // Cambiar ícono
+      const icon = this.querySelector('i');
+      if (navbarMenu.classList.contains('active')) {
+        icon.classList.remove('bi-list');
+        icon.classList.add('bi-x-lg');
+      } else {
+        icon.classList.remove('bi-x-lg');
+        icon.classList.add('bi-list');
+      }
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        const navbarMenu = document.querySelector('.navbar-menu');
+        navbarMenu.classList.remove('active');
+        const icon = document.querySelector('.navbar-toggler i');
+        icon.classList.remove('bi-x-lg');
+        icon.classList.add('bi-list');
+      });
+    });
+  </script>
+</body>
+</html>
