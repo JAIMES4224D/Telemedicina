@@ -28,7 +28,7 @@
 | **📊 Dashboard Paciente** | **📊 Dashboard Administrativo**|
 |![Mockup](imagen_2025-10-18_153113123.png)|![Mockup](imagen_2025-10-18_153137976.png)|
 | **👥 Gestion de Reportes Admin** | **📱 Consultas Virtuales** |
-| ![Mockup](imagen_2025-10-18_154018272.png) | ![Mockup](https://via.placeholder.com/400x250/9B59B6/white?text=Consultas+Virtuales) |
+| ![Mockup](imagen_2025-10-18_154018272.png) | ![Mockup](imagen_2025-10-18_154235752.png) |
 
 </div>
 
