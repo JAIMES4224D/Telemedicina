@@ -27,8 +27,8 @@
 | ![Mockup](imagen_2025-10-18_153344606.png) | ![Mockup](imagen_2025-10-18_153025840.png) |
 | **📊 Dashboard Paciente** | **📊 Dashboard Administrativo**|
 |![Mockup](imagen_2025-10-18_153113123.png)|![Mockup](imagen_2025-10-18_153137976.png)|
-| **👥 Gestión Pacientes** | **📱 Consultas Virtuales** |
-| ![Mockup](https://via.placeholder.com/400x250/F39C12/white?text=Gestión+Pacientes) | ![Mockup](https://via.placeholder.com/400x250/9B59B6/white?text=Consultas+Virtuales) |
+| **👥 Gestion de Reportes Admin** | **📱 Consultas Virtuales** |
+| ![Mockup](imagen_2025-10-18_154018272.png) | ![Mockup](https://via.placeholder.com/400x250/9B59B6/white?text=Consultas+Virtuales) |
 
 </div>
 
