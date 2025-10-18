@@ -31,6 +31,15 @@
 | ![Mockup](imagen_2025-10-18_154018272.png) | ![Mockup](imagen_2025-10-18_154235752.png) |
 
 </div>
+<div align="center">
+    | | |    
+    |:-------------------------:|:-------------------------:|
+    | **🎭 Interfaz Principa** | **📊 Vista Médico** |
+    |![Mockup](WEBP.gif)|![Mockup](MEDICO.gif)|
+    | **🎭 Vista Paciente** | **📊 Vista Administrativo** |
+    |![Mockup](PACIENTE.gif)|![Mockup](ADMIN.gif)|
+    
+</div>
 
 ---
 
