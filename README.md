@@ -77,3 +77,5 @@ graph TB
     style B fill:#50C878,color:white
     style C fill:#F39C12,color:white
     style D fill:#9B59B6,color:white
+```
+</div>
