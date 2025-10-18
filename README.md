@@ -79,3 +79,88 @@ graph TB
     style D fill:#9B59B6,color:white
 ```
 </div>
+🚀 CARACTERÍSTICAS PRINCIPALES
+<div align="center">
+🎯 Módulos Especializados por Rol
+</div><div align="center"><table> <tr> <td width="33%" valign="top">
+🌟 MÓDULO PACIENTE
+<div align="center"> 🫀 **Gestión Personal de Salud** </div>
+📅 Agendamiento Inteligente
+
+Sistema de citas 24/7
+
+Recordatorios automáticos
+
+Cancelación flexible
+
+🏥 Historial Médico Digital
+
+Acceso completo a historial
+
+Resultados de exámenes
+
+Medicamentos recetados
+
+🔔 Comunicación Directa
+
+Mensajería con médicos
+
+Alertas importantes
+
+Notificaciones push
+
+</td> <td width="33%" valign="top">
+💼 MÓDULO MÉDICO
+<div align="center"> 🩺 **Herramientas Profesionales** </div>
+🗓️ Gestión de Agenda
+
+Vista calendario integrada
+
+Control de disponibilidad
+
+Optimización de tiempo
+
+📊 Dashboard Clínico
+
+Métricas de pacientes
+
+Indicadores de salud
+
+Reportes automáticos
+
+💡 Herramientas Diagnósticas
+
+Prescripción digital
+
+Notas médicas
+
+Seguimiento tratamiento
+
+</td> <td width="33%" valign="top">
+👑 MÓDULO ADMINISTRADOR
+<div align="center"> ⚙️ **Control Total del Sistema** </div>
+📈 Analítica Avanzada
+
+Reportes del sistema
+
+Métricas de uso
+
+KPIs de rendimiento
+
+👥 Gestión de Usuarios
+
+Altas y bajas
+
+Permisos y roles
+
+Auditoría completa
+
+🔧 Configuración
+
+Parámetros del sistema
+
+Backup automático
+
+Seguridad y acceso
+
+</td> </tr> </table></div>
