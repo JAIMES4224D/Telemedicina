@@ -300,14 +300,37 @@ sequenceDiagram
 
 </div>
 
+
+
+<br>
+
+[![🌟 Dar Estrella](https://img.shields.io/badge/🌟-Dar_Estrella-4A90E2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JAIMES4224D/Telemedicina)
+[![🐛 Reportar Error](https://img.shields.io/badge/🐛-Reportar_Error-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JAIMES4224D/Telemedicina/issues)
+[![💡 Sugerir Funcionalidad](https://img.shields.io/badge/💡-Sugerir_Funcionalidad-50C878?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JAIMES4224D/Telemedicina/issues)
+
+<br>
+
+*💫 Innovando en telemedicina desde 2024*
+
+</div>
+
 ---
 
-<div align="center" style="margin-top: 40px;">
+<div align="center" style="margin-top: 30px;">
 
-## 🌟 **¿LISTO PARA MODERNIZAR TU SISTEMA DE SALUD?**
+### **📞 ¿Preguntas o Colaboraciones?**
 
-**¡Clona el proyecto y comienza la transformación digital!**
+¡No dudes en contactarnos para implementar este sistema en tu institución!
 
-```bash
-git clone https://github.com/JAIMES4224D/Telemedicina.git
-```
+<br>
+
+[![📧 Contacto](https://img.shields.io/badge/📧-Contacto-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:jaimespassunijeferson@gmail.com)
+[![💼 LinkedIn](https://img.shields.io/badge/💼-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeferson-jociney-jaimes-passuni-700a58236)
+
+<br>
+
+![Visitor Count](https://api.visitorbadge.io/api/VisitorHit?user=JAIMES4224D&repo=Telemedicina&countColor=%234A90E2&labelColor=%230078D4)
+
+**👨‍💻 Desarrollado con ❤️ por [Jeferson Jociney Jaimes Passuni](https://github.com/JAIMES4224D)**
+
+</div>
