@@ -24,7 +24,7 @@
 | | |
 |:-------------------------:|:-------------------------:|
 | **🎭 Interfaz Principal** | **📊 Dashboard Médico** |
-| ![Mockup](https://via.placeholder.com/400x250/4A90E2/white?text=Interfaz+Principal) | ![Mockup](imagen_2025-10-18_153025840.png) |
+| ![Mockup](imagen_2025-10-18_153344606.png) | ![Mockup](imagen_2025-10-18_153025840.png) |
 | **👥 Gestión Pacientes** | **📱 Consultas Virtuales** |
 | ![Mockup](https://via.placeholder.com/400x250/F39C12/white?text=Gestión+Pacientes) | ![Mockup](https://via.placeholder.com/400x250/9B59B6/white?text=Consultas+Virtuales) |
 
