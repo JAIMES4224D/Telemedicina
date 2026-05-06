@@ -551,7 +551,7 @@
 
                     
                     <div class="register-link">
-                        <p>¿No tienes una cuenta? <a href="../web_principal/registro.html">Regístrate aquí</a></p>
+                        <p>¿No tienes una cuenta? <a href="../web_principal/registro.jsp">Regístrate aquí</a></p>
                     </div>
                 </div>
             </div>
